@@ -1,33 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pokédex</title>
-
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="pokedex">
+<div class="pokedex">
 
-    <h1 class="title">Pokédex</h1>
+  <!-- LEFT SIDE -->
+  <div class="left-panel">
 
-    <div class="search-box">
-      <input type="text" id="pokemonInput" placeholder="Enter Pokémon name">
-      <button id="searchBtn">Search</button>
+    <!-- Top Lights -->
+    <div class="top-lights">
+      <div class="big-light"></div>
+
+      <div class="small-lights">
+        <span class="red"></span>
+        <span class="yellow"></span>
+        <span class="green"></span>
+      </div>
     </div>
 
-    <img id="pokemonImage" class="pokemon-img" src="" alt="Pokemon">
+    <!-- Main Screen -->
+    <div class="screen-container">
+      <div class="screen-top-dots">
+        <span></span>
+        <span></span>
+      </div>
 
-    <h2 id="pokemonName" class="pokemon-name"></h2>
+      <img id="pokemonImage" class="pokemon-img">
 
-    <div id="types" class="type-container"></div>
+      <h2 id="pokemonName" class="pokemon-name"></h2>
 
-    <div class="stats" id="stats"></div>
+      <div id="types" class="type-container"></div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+
+      <div class="joystick"></div>
+
+      <div class="buttons">
+        <div class="small-btn red-btn"></div>
+        <div class="small-btn blue-btn"></div>
+      </div>
+
+      <div class="dpad">
+        <div></div>
+      </div>
+
+    </div>
 
   </div>
 
-  <script src="script.js"></script>
+  <!-- CENTER HINGE -->
+  <div class="hinge"></div>
+
+  <!-- RIGHT SIDE -->
+  <div class="right-panel">
+
+    <!-- Search -->
+    <div class="search-box">
+      <input
+        type="text"
+        id="pokemonInput"
+        placeholder="Enter Pokémon"
+      >
+
+      <button id="searchBtn">
+        Search
+      </button>
+    </div>
+
+    <!-- Stats Screen -->
+    <div class="stats-screen">
+      <div id="stats" class="stats"></div>
+    </div>
+
+    <!-- Blue Buttons -->
+    <div class="blue-grid">
+      <div></div><div></div><div></div><div></div><div></div>
+      <div></div><div></div><div></div><div></div><div></div>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
