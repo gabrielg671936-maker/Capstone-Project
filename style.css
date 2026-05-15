@@ -11,7 +11,11 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
+  padding:20px;
+  overflow-x:hidden;
 }
+
+/* MAIN POKEDEX */
 
 .pokedex{
   display:flex;
@@ -19,7 +23,9 @@ body{
   gap:15px;
 }
 
-/* LEFT PANEL */
+/* =========================
+   LEFT PANEL
+========================= */
 
 .left-panel{
   width:380px;
@@ -28,9 +34,10 @@ body{
   border-radius:20px;
   padding:20px;
   position:relative;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
 }
 
-/* LIGHTS */
+/* TOP LIGHTS */
 
 .top-lights{
   display:flex;
@@ -45,7 +52,9 @@ body{
   border-radius:50%;
   background:#58d8ff;
   border:5px solid white;
-  box-shadow:0 0 20px rgba(255,255,255,0.7);
+  box-shadow:
+    0 0 20px rgba(255,255,255,0.8),
+    inset -8px -8px 15px rgba(0,0,0,0.2);
 }
 
 .small-lights{
@@ -60,18 +69,20 @@ body{
 }
 
 .red{
-  background:red;
+  background:#ff2b2b;
 }
 
 .yellow{
-  background:yellow;
+  background:#ffe600;
 }
 
 .green{
-  background:lime;
+  background:#4dff4d;
 }
 
-/* SCREEN */
+/* =========================
+   SCREEN
+========================= */
 
 .screen-container{
   background:#dcdcdc;
@@ -79,6 +90,7 @@ body{
   padding:20px;
   width:100%;
   text-align:center;
+  border:4px solid #b5b5b5;
 }
 
 .screen-top-dots{
@@ -101,6 +113,7 @@ body{
   object-fit:contain;
   background:#222;
   border-radius:10px;
+  padding:10px;
 }
 
 .pokemon-name{
@@ -110,7 +123,9 @@ body{
   color:black;
 }
 
-/* TYPES */
+/* =========================
+   TYPES
+========================= */
 
 .type-container{
   display:flex;
@@ -126,9 +141,12 @@ body{
   color:white;
   font-weight:bold;
   text-transform:capitalize;
+  font-size:0.9rem;
 }
 
-/* CONTROLS */
+/* =========================
+   CONTROLS
+========================= */
 
 .controls{
   margin-top:25px;
@@ -142,6 +160,7 @@ body{
   height:70px;
   background:#222;
   border-radius:50%;
+  box-shadow:inset -5px -5px 10px rgba(255,255,255,0.1);
 }
 
 .buttons{
@@ -174,7 +193,9 @@ body{
   );
 }
 
-/* HINGE */
+/* =========================
+   HINGE
+========================= */
 
 .hinge{
   width:45px;
@@ -182,9 +203,12 @@ body{
   background:#cc0000;
   border:5px solid black;
   border-radius:30px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* RIGHT PANEL */
+/* =========================
+   RIGHT PANEL
+========================= */
 
 .right-panel{
   width:320px;
@@ -196,7 +220,10 @@ body{
   display:flex;
   flex-direction:column;
   justify-content:flex-start;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
 }
+
+/* SEARCH */
 
 .search-box{
   display:flex;
@@ -208,6 +235,8 @@ body{
   padding:10px;
   border:none;
   border-radius:8px;
+  outline:none;
+  font-size:1rem;
 }
 
 .search-box button{
@@ -217,9 +246,17 @@ body{
   background:black;
   color:white;
   cursor:pointer;
+  font-weight:bold;
+  transition:0.2s;
 }
 
-/* STATS SCREEN */
+.search-box button:hover{
+  transform:scale(1.05);
+}
+
+/* =========================
+   STATS SCREEN
+========================= */
 
 .stats-screen{
   background:#222;
@@ -228,14 +265,19 @@ body{
   border-radius:10px;
   padding:15px;
   min-height:180px;
+  border:3px solid #111;
+  overflow-y:auto;
 }
 
 .stat{
   margin-bottom:10px;
   text-transform:capitalize;
+  font-size:0.95rem;
 }
 
-/* BLUE GRID */
+/* =========================
+   BLUE GRID
+========================= */
 
 .blue-grid{
   margin-top:20px;
@@ -250,23 +292,172 @@ body{
   border:1px solid #333;
 }
 
-/* TYPE COLORS */
+/* =========================
+   TYPE COLORS
+========================= */
 
 .normal { background:#A8A878; }
+
 .fire { background:#F08030; }
+
 .water { background:#6890F0; }
-.electric { background:#F8D030; color:black; }
+
+.electric {
+  background:#F8D030;
+  color:black;
+}
+
 .grass { background:#78C850; }
-.ice { background:#98D8D8; color:black; }
+
+.ice {
+  background:#98D8D8;
+  color:black;
+}
+
 .fighting { background:#C03028; }
+
 .poison { background:#A040A0; }
-.ground { background:#E0C068; color:black; }
+
+.ground {
+  background:#E0C068;
+  color:black;
+}
+
 .flying { background:#A890F0; }
+
 .psychic { background:#F85888; }
+
 .bug { background:#A8B820; }
+
 .rock { background:#B8A038; }
+
 .ghost { background:#705898; }
+
 .dragon { background:#7038F8; }
+
 .dark { background:#705848; }
-.steel { background:#B8B8D0; color:black; }
+
+.steel {
+  background:#B8B8D0;
+  color:black;
+}
+
 .fairy { background:#EE99AC; }
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* Tablets */
+
+@media (max-width:950px){
+
+  .pokedex{
+    transform:scale(0.85);
+    gap:10px;
+  }
+
+}
+
+/* Small tablets / large phones */
+
+@media (max-width:768px){
+
+  body{
+    padding:20px;
+  }
+
+  .pokedex{
+    flex-direction:column;
+    transform:none;
+    width:100%;
+    align-items:center;
+  }
+
+  .hinge{
+    width:260px;
+    height:40px;
+    border-radius:20px;
+  }
+
+  .left-panel,
+  .right-panel{
+    width:100%;
+    max-width:420px;
+  }
+
+  .right-panel{
+    height:auto;
+  }
+
+  .pokemon-img{
+    width:180px;
+    height:180px;
+  }
+
+  .pokemon-name{
+    font-size:1.7rem;
+  }
+
+}
+
+/* Phones */
+
+@media (max-width:480px){
+
+  .left-panel,
+  .right-panel{
+    padding:15px;
+    border-width:4px;
+  }
+
+  .big-light{
+    width:55px;
+    height:55px;
+  }
+
+  .small-lights span{
+    width:14px;
+    height:14px;
+  }
+
+  .pokemon-img{
+    width:150px;
+    height:150px;
+  }
+
+  .pokemon-name{
+    font-size:1.4rem;
+  }
+
+  .search-box{
+    flex-direction:column;
+  }
+
+  .search-box button{
+    width:100%;
+  }
+
+  .controls{
+    gap:10px;
+  }
+
+  .joystick{
+    width:55px;
+    height:55px;
+  }
+
+  .dpad{
+    width:55px;
+    height:55px;
+  }
+
+  .blue-grid div{
+    height:35px;
+  }
+
+  .stats-screen{
+    min-height:150px;
+  }
+
+}
